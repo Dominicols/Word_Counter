@@ -1,0 +1,38 @@
+Explanation
+
+        The first thing I added when starting this assignment was to check if the user added the path to the txt file 
+    they wish to run through the application by using the sys built in library and checking the users command line argument.
+
+        I then moved onto creating the application's main function called word_path(). I came to the conclusion that using 
+    dictionaries to store words as keys and their values as the word's count would be the best approach. The keys would be unique as each 
+    word would be looped through and checked if it already exists, adding a count to the value or creating a new key/value pair.
+
+        I opened the file with a 'with open' statement to ensure the filestreams closure after. I continued to iterate through each line
+    of the file and formatted it to have no whitespaces or punctuation and so that all the words were lower case. I then put each line into 
+    list of words.
+
+        Iterating through each word in words I checked if the word was not a blank space left over from line breaks and whether the word is
+    already in the word_count dictionary. If the word is already in the word_count dictionary then its count goes up by one. Else the new
+    word is added and given a count of 1 while also keeping track of the total count of words.
+
+        My custom sort function is then called with the word_count dictionary being the parameter. The custom sort function first checks if the
+    dictionary's length is less than or equal to 1 in order to save time. The custom sort function then iterates through the word_count
+    dictionary passed items and puts the values of the dictionary into a list.
+
+        The custom sort function then reverses the order of the list of values using nested for loops and compares whether the next value
+    is larger than the current value in the list of values. If it is then it switches the position of the current and next and iterates again.
+
+        I then iterated through the reordered list of values and set the keys to a list and afterwards removed the key/value pair from the 
+    dictionary so that if there was words with the same count it wouldn't just return the first one each time.
+
+        Finally the custom sort function iterates through the list of keys and adds the key/value pairs from the lists into our final sorted
+    dictionary and returns it.
+
+        Back in the word_count function, the return statement is prepared by appending the title line and iterating through our sorted function
+    10 times in order to get the list of 10 most found words. I decided to iterate the final dictionary in the word_count function in order
+    to have the custom reverse sort function be reusable with other dictionaries.
+
+        Finally, the application checks if the file is provided and if so if it exists and if those checks pass the return statement is printed.
+    
+Assumptions
+    I removed punctuation.
